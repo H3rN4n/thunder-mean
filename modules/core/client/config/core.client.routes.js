@@ -13,10 +13,38 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 
     // Home state routing
     $stateProvider
-    .state('home', {
-      url: '/',
-      templateUrl: 'modules/core/client/views/home.client.view.html'
-    })
+      .state('home', {
+        url: '',
+        templateUrl: 'modules/core/client/views/main.html',
+        controller: 'MainController',
+        controllerAs: 'vm',
+        abstract: true
+      })
+      .state('home.dashboard', {
+        url: '/dashboard',
+        templateUrl: 'modules/core/client/views/dashboard.html',
+        data: {
+          title: 'Dashboard'
+        }
+      })
+      .state('home.profile', {
+        url: '/profile',
+        templateUrl: 'modules/core/client/views/profile.html',
+        controller: 'ProfileController',
+        controllerAs: 'vm',
+        data: {
+          title: 'Profile'
+        }
+      })
+      .state('home.table', {
+        url: '/table',
+        controller: 'TableController',
+        controllerAs: 'vm',
+        templateUrl: 'modules/core/client/views/table.html',
+        data: {
+          title: 'Table'
+        }
+      })
     .state('not-found', {
       url: '/not-found',
       templateUrl: 'modules/core/client/views/404.client.view.html',
@@ -38,5 +66,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         ignoreState: true
       }
     });
+
+    $urlRouterProvider.otherwise('/dashboard');
   }
 ]);
