@@ -230,7 +230,7 @@ module.exports.init = function (db) {
   this.initViewEngine(app);
 
   // Initialize Express session
-  this.initSession(app, db);
+  //this.initSession(app, db);
 
   // Initialize Modules configuration
   this.initModulesConfiguration(app);
@@ -251,7 +251,7 @@ module.exports.init = function (db) {
   this.initErrorRoutes(app);
 
   // Configure Socket.io
-  app = this.configureSocketIO(app, db);
+  //app = this.configureSocketIO(app, db);
 
   return app;
 };

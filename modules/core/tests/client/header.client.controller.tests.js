@@ -11,10 +11,9 @@
     // Load the main application module
     beforeEach(module(ApplicationConfiguration.applicationModuleName));
 
-    beforeEach(inject(function ($controller, $rootScope, _$state_, _Authentication_) {
+    beforeEach(inject(function ($controller, $rootScope, _$state_) {
       scope = $rootScope.$new();
       $state = _$state_;
-      Authentication = _Authentication_;
 
       HeaderController = $controller('HeaderController', {
         $scope: scope

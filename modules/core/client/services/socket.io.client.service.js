@@ -1,14 +1,11 @@
 'use strict';
 
 // Create the Socket.io wrapper service
-angular.module('core').service('Socket', ['Authentication', '$state', '$timeout',
-  function (Authentication, $state, $timeout) {
+angular.module('core').service('Socket', ['$state', '$timeout',
+  function ($state, $timeout) {
     // Connect to Socket.io server
     this.connect = function () {
       // Connect only when authenticated
-      if (Authentication.user) {
-        this.socket = io();
-      }
     };
     this.connect();
 
