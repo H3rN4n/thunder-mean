@@ -6,7 +6,6 @@ JavaScript Stack construido con Express, AngularJS, and Node.js proveyendo resul
 ## ¿Como ejecutar la aplicación?
 Tener instalados las siguientes aplicaciones.
 * Node.js - [Bajar e instalar Node.js](https://nodejs.org/en/download/)
-* Ruby - [Bajar e instalar Ruby](https://www.ruby-lang.org/en/documentation/installation/)
 * Bower - [Bower Package Manager](http://bower.io/) para instalar las dependencias de front-end. Se debe instalar globalmente a travez de npm.
 
 ```bash
@@ -19,26 +18,16 @@ $ npm install -g bower
 $ npm install -g grunt-cli
 ```
 
-* Sass - You're going to use [Sass](http://sass-lang.com/) to compile CSS during your grunt task. Make sure you have ruby installed, and then install Sass using gem install:
-
-```bash
-$ gem install sass
-```
-
-```bash
-$ npm install -g grunt-cli
-```
 ## Clonar el repositorio
 
 ```bash
-$ git clone https://github.com/commapp/....
+$ git clone https://github.com/ipdem/commapp-www/
 ```
 
 ## Instalar dependencias
 ```bash
 $ npm install && bower install
 ```
-
 
 ## Running Your Application
 After the install process is over, you'll be able to run your application using Grunt, just run grunt default task:

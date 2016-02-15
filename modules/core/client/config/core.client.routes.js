@@ -20,6 +20,13 @@ angular.module('core').config([ '$stateProvider', '$urlRouterProvider',
           ignoreState: true
         }
       })
+      .state('test', {
+        url: '/test',
+        templateUrl: 'modules/core/client/views/home.client.view.html',
+        data: {
+          ignoreState: true
+        }
+      })
       .state('bad-request', {
         url: '/bad-request',
         templateUrl: 'modules/core/client/views/400.client.view.html',
