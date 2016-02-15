@@ -1,84 +1,81 @@
-<section ng-controller="HomeController">
-  <div class="jumbotron text-center">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
-        <img alt="MEAN.JS" class="img-responsive text-center" src="modules/core/client/img/brand/logo.png" />
-      </div>
+<ui-view layout="column" layout-fill layout-padding>
+  <div class="inset" hide-sm></div>
+  <ng-switch on="data.selectedIndex" class="tabpanel-container">
+    <div role="tabpanel"
+         id="tab1-content"
+         aria-labelledby="tab1"
+         ng-switch-when="0"
+         md-swipe-left="next()"
+         md-swipe-right="previous()"
+         layout="row" layout-align="center center">
+      <md-card flex-gt-sm="90" flex-gt-md="80">
+        <md-card-content>
+          <h2>Activity</h2>
+          <md-list>
+            <md-item ng-repeat="item in activity | filter:search">
+              <md-item-content>
+                <div class="md-tile-left inset" hide-sm>
+                  <user-avatar></user-avatar>
+                </div>
+                <div class="md-tile-content">
+                  <h3>{{item.what}}</h3>
+                  <h4>{{item.who}}</h4>
+                  <p>
+                    {{item.notes}}
+                  </p>
+                </div>
+              </md-item-content>
+              <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
+              <md-divider hide-gt-sm ng-if="!$last"></md-divider>
+            </md-item>
+            <md-divider></md-divider>
+            <md-item layout class="inset">
+              <md-button layout layout-align="start center" flex class="md-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> More
+              </md-button>
+            </md-item>
+          </md-list>
+        </md-card-content>
+      </md-card>
     </div>
-    <br>
-    <div class="row">
-      <p class="lead">
-        Open-Source Full-Stack Solution For MEAN Applications
-      </p>
+    <div role="tabpanel"
+         id="tab2-content"
+         aria-labelledby="tab2"
+         ng-switch-when="1"
+         md-swipe-left="next()"
+         md-swipe-right="previous()"
+         layout="row" layout-align="center center">
+      <md-card flex-gt-sm="90" flex-gt-md="80">
+        <md-card-content>
+          <h2>Favorites</h2>
+          <md-list>
+            <md-item ng-repeat="item in activity | filter:search | orderBy:'-what'">
+              <md-item-content>
+                <div class="md-tile-left inset" hide-sm>
+                  <user-avatar></user-avatar>
+                </div>
+                <div class="md-tile-content">
+                  <h3>{{item.what}}</h3>
+                  <h4>{{item.who}}</h4>
+                  <p>
+                    {{item.notes}}
+                  </p>
+                </div>
+              </md-item-content>
+              <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
+              <md-divider hide-gt-sm ng-if="!$last"></md-divider>
+            </md-item>
+            <md-divider></md-divider>
+            <md-item layout class="inset">
+              <md-button layout layout-align="start center" flex class="md-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> More
+              </md-button>
+            </md-item>
+          </md-list>
+        </md-card-content>
+      </md-card>
     </div>
-    <div class="row">
-      <p>
-        <a class="btn btn-primary btn-lg" href="http://meanjs.org" target="_blank">Learn more</a>
-      </p>
-    </div>
-  </div>
-  <div>
-    <h2>Congrats! You've configured and run the sample application.</h2>
-    <p>MEAN.JS is a web application boilerplate, which means you should start changing everything :-)</p>
-    <p>This sample application tracks users and articles.</p>
-    <ul>
-      <li>
-        Click
-        <em>Sign Up</em> to get started.
-      </li>
-      <li>
-        Configure your app to work with your social accounts, by editing the
-        <em>/config/env/*.js</em> files.
-      </li>
-      <li>
-        Edit your users module.
-      </li>
-      <li>
-        Add new CRUD modules.
-      </li>
-      <li>
-        Have fun...
-      </li>
-    </ul>
-  </div>
-  <div class="row">
-    <div class="col-md-3">
-      <h2><strong>M</strong>ongoDB</h2>
-      <p><a target="_blank" href="http://mongodb.org/">MongoDB</a> is a NoSQL database. MongoDB's <a target="_blank" href="http://docs.mongodb.org/manual/">great manual</a> is the place to get started with NoSQL and MongoDB.</p>
-    </div>
-    <div class="col-md-3">
-      <h2><strong>E</strong>xpress</h2>
-      <p><a target="_blank" href="http://expressjs.com/"> Express</a> is a NodeJS server-side application web framework. Check out <a target="_blank" href="http://expressjs.com/4x/api.html">The ExpressJS API reference for more information</a> or <a target="_blank" href="http://stackoverflow.com/questions/8144214/learning-express-for-node-js">StackOverflow</a> for more info.</p>
-    </div>
-    <div class="col-md-3">
-      <h2><strong>A</strong>ngularJS</h2>
-      <p><a target="_blank" href="http://angularjs.org/">AngularJS</a> is client-side web application framework. The <a target="_blank" href="http://www.thinkster.io/">Thinkster Popular Guide</a> and <a target="_blank" href="https://egghead.io/">Egghead Videos</a> are great resources.</p>
-    </div>
-    <div class="col-md-3">
-      <h2><strong>N</strong>ode.js</h2>
-      <p><a target="_blank" href="http://nodejs.org/">Node.js</a> is a JavaScript run-time, popular for being a web server platform. Node's website and this <a target="_blank" href="http://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js">stackOverflow thread</a> offer excellent starting points to get to grasps with node.</p>
-    </div>
-  </div>
-  <div class="well">
-    <h2>MEAN.JS Documentation</h2>
-    <p>
-      Once you're familiar with the foundation technology, check out the MEAN.JS Documentation:
-      <ul>
-        <li><a target="_blank" href="http://meanjs.org/docs.html">MEAN.JS Documentation</a>
-        </li>
-        <!-- <li><a target="_blank" href="http://meanjs.org/generator.html">Yeoman Generator</a>
-				</li> -->
-        <li><a target="_blank" href="http://meanjs.org/modules.html">Modules</a>
-        </li>
-        <li><a target="_blank" href="http://meanjs.org/changelog.html">Changelog</a>
-        </li>
-        <li><a target="_blank" href="http://meanjs.org/community.html">Community</a>
-        </li>
-        <li><a target="_blank" href="http://blog.meanjs.org">Blog</a>
-        </li>
-      </ul>
-    </p>
-  </div>
-  <br>Enjoy &amp; Keep Us Updated,
-  <br>The MEAN.JS Team.
-</section>
+
+  </ng-switch>
+
+</ui-view>

@@ -51,8 +51,6 @@ angular.module(ApplicationConfiguration.applicationModuleName).config(['$locatio
       'A700': '#E75753'
     });
 
-    $mdIconProvider.icon('user', 'assets/images/user.svg', 64);
-
   }
 ]);
 
