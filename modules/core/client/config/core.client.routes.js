@@ -14,12 +14,8 @@ angular.module('core').config([ '$stateProvider', '$urlRouterProvider',
     // Home state routing
     $stateProvider
       .state('home', {
-        url: '/',
-        templateUrl: 'modules/core/client/views/home.client.view.html'
-      })
-      .state('not-found', {
-        url: '/not-found',
-        templateUrl: 'modules/core/client/views/404.client.view.html',
+        url: '/dashboard',
+        templateUrl: 'modules/core/client/views/home.client.view.html',
         data: {
           ignoreState: true
         }
@@ -39,6 +35,6 @@ angular.module('core').config([ '$stateProvider', '$urlRouterProvider',
         }
       });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/dashboard');
   }
 ]);
