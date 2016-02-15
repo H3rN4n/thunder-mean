@@ -287,7 +287,7 @@ module.exports = function (grunt) {
   });
 
   // Lint CSS and JavaScript files.
-  grunt.registerTask('lint', ['sass', 'less', 'jshint', 'eslint', 'csslint']);
+  grunt.registerTask('lint', ['less', 'jshint', 'eslint', 'csslint']);
 
   // Lint project files and minify them into two production files.
   grunt.registerTask('build', ['env:dev', 'lint', 'ngAnnotate', 'uglify', 'cssmin']);
@@ -308,4 +308,7 @@ module.exports = function (grunt) {
 
   // Run the project in production mode
   grunt.registerTask('prod', ['build', 'env:prod', 'copy:localConfig', 'concurrent:default']);
+
+  grunt.registerTask('heroku:development', ['env:dev', 'lint', 'copy:localConfig']);
+  grunt.registerTask('heroku:production', ['build', 'env:prod', 'copy:localConfig']);
 };
