@@ -34,6 +34,11 @@ $ npm install -g grunt-cli
 $ git clone https://github.com/commapp/....
 ```
 
+## Instalar dependencias
+```bash
+$ npm install && bower install
+```
+
 
 ## Running Your Application
 After the install process is over, you'll be able to run your application using Grunt, just run grunt default task:
