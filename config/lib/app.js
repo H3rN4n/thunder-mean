@@ -1,8 +1,6 @@
 'use strict';
 
-/**
- * Module dependencies.
- */
+/*** Module dependencies.*/
 var config = require('../config'),
   mongoose = require('./mongoose'),
   express = require('./express'),
@@ -27,9 +25,9 @@ module.exports.init = function init(callback) {
   //mongoose.connect(function (db) {
     // Initialize express
     //var app = express.init(db);
-    var app = express.init();
+  var app = express.init();
     //if (callback) callback(app, db, config);
-    if (callback) callback(app, {}, config);
+  if (callback) callback(app, {}, config);
 
   //});
 };
