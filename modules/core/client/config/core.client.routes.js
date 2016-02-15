@@ -1,7 +1,7 @@
 'use strict';
 
 // Setting up route
-angular.module('core').config(['$stateProvider', '$urlRouterProvider',
+angular.module('core').config([ '$stateProvider', '$urlRouterProvider',
   function ($stateProvider, $urlRouterProvider) {
 
     // Redirect to 404 when route not found
@@ -14,59 +14,32 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
     // Home state routing
     $stateProvider
       .state('home', {
-        url: '',
-        templateUrl: 'modules/core/client/views/main.html',
-        controller: 'MainController',
-        controllerAs: 'vm',
-        abstract: true
+        url: '/',
+        templateUrl: 'modules/core/client/views/home.client.view.html',
+        controllerAs: 'vm'
       })
-      .state('home.dashboard', {
-        url: '/dashboard',
-        templateUrl: 'modules/core/client/views/dashboard.html',
+      .state('not-found', {
+        url: '/not-found',
+        templateUrl: 'modules/core/client/views/404.client.view.html',
         data: {
-          title: 'Dashboard'
+          ignoreState: true
         }
       })
-      .state('home.profile', {
-        url: '/profile',
-        templateUrl: 'modules/core/client/views/profile.html',
-        controller: 'ProfileController',
-        controllerAs: 'vm',
+      .state('bad-request', {
+        url: '/bad-request',
+        templateUrl: 'modules/core/client/views/400.client.view.html',
         data: {
-          title: 'Profile'
+          ignoreState: true
         }
       })
-      .state('home.table', {
-        url: '/table',
-        controller: 'TableController',
-        controllerAs: 'vm',
-        templateUrl: 'modules/core/client/views/table.html',
+      .state('forbidden', {
+        url: '/forbidden',
+        templateUrl: 'modules/core/client/views/403.client.view.html',
         data: {
-          title: 'Table'
+          ignoreState: true
         }
-      })
-    .state('not-found', {
-      url: '/not-found',
-      templateUrl: 'modules/core/client/views/404.client.view.html',
-      data: {
-        ignoreState: true
-      }
-    })
-    .state('bad-request', {
-      url: '/bad-request',
-      templateUrl: 'modules/core/client/views/400.client.view.html',
-      data: {
-        ignoreState: true
-      }
-    })
-    .state('forbidden', {
-      url: '/forbidden',
-      templateUrl: 'modules/core/client/views/403.client.view.html',
-      data: {
-        ignoreState: true
-      }
-    });
+      });
 
-    $urlRouterProvider.otherwise('/dashboard');
+    $urlRouterProvider.otherwise('/');
   }
 ]);
