@@ -1,4 +1,4 @@
-[![MEAN.JS Logo](http://www.commapp.co)](http://www.commapp.co)
+[![Commapp Logo](http://www.commapp.co)](http://www.commapp.co)
 
 ## Commapp Client App.
 JavaScript Stack construido con Express, AngularJS, and Node.js proveyendo resultados a travez de la colección con la Api de Commapp.
