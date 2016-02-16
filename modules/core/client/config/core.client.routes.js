@@ -14,15 +14,29 @@ angular.module('core').config([ '$stateProvider', '$urlRouterProvider',
     // Home state routing
     $stateProvider
       .state('home', {
-        url: '/dashboard',
+        url: '/',
         templateUrl: 'modules/core/client/views/home.client.view.html',
         data: {
           ignoreState: true
         }
       })
-      .state('test', {
-        url: '/test',
-        templateUrl: 'modules/core/client/views/home.client.view.html',
+      .state('legal', {
+        url: '/legal',
+        templateUrl: 'modules/core/client/views/legal.client.view.html',
+        data: {
+          ignoreState: true
+        }
+      })
+      .state('contact', {
+        url: '/contact',
+        templateUrl: 'modules/core/client/views/contact.client.view.html',
+        data: {
+          ignoreState: true
+        }
+      })
+      .state('about', {
+        url: '/about-us',
+        templateUrl: 'modules/core/client/views/about.client.view.html',
         data: {
           ignoreState: true
         }
@@ -42,6 +56,6 @@ angular.module('core').config([ '$stateProvider', '$urlRouterProvider',
         }
       });
 
-    $urlRouterProvider.otherwise('/dashboard');
+    $urlRouterProvider.otherwise('/');
   }
 ]);

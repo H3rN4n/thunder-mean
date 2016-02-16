@@ -35,7 +35,7 @@
   {% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">{% endfor %}
 </head>
 
-<body layout="row"  ng-controller="SidebarController">
+<body layout="row demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header"  ng-controller="SidebarController">
 <div ng-hide="!ng-cloak" style="width: 100%;
     height: 500px;
     text-align: center;
@@ -47,18 +47,17 @@
             ng-click="ul.toggleList()" aria-label="Show User List"
             md-is-locked-open="$mdMedia('gt-sm')">
 
-  <md-toolbar class="md-whiteframe-z1" style="style="text-align: center; ">
-    <img src="/modules/core/client/img/brand/logo.png" alt="Commapp" height="44" width="150" style="text-align: center ;margin: 5% 10%;"/>
+  <md-toolbar class="md-whiteframe-z1" style="text-align: center;">
+    <img src="/modules/core/client/img/brand/logo.png" alt="Commapp" height="32" width="100" style="margin: 5% 20px;"/>
   </md-toolbar>
 
-  <!--<md-list>
-    <md-list-item ng-repeat="it in ul.users">
-      <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
-        <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
-        {{it.name}}
+  <md-list>
+    <md-list-item ng-repeat="it in [1,2,3,4,5,6]">
+      <md-button ng-class="">
+        Button
       </md-button>
     </md-list-item>
-  </md-list>-->
+  </md-list>
 
 </md-sidenav>
 
@@ -66,11 +65,10 @@
 <div class="ng-cloak" flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
 
   <md-toolbar layout="row" class="md-whiteframe-z1">
-    <h3>Angular Material - Starter App</h3>
+    <h3> </h3>
   </md-toolbar>
 
   <md-content flex id="content">
-    Hola
     {% block content %}{% endblock %}
   </md-content>
 
