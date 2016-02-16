@@ -35,9 +35,14 @@
   {% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">{% endfor %}
 </head>
 
-<body class="ng-cloak" layout="row"  ng-controller="SidebarController">
-
-<md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
+<body layout="row"  ng-controller="SidebarController">
+<div ng-hide="!ng-cloak" style="width: 100%;
+    height: 500px;
+    text-align: center;
+    margin: 20% 0;">
+  <img src="/modules/core/client/img/brand/logo.png" alt="Commapp"/>
+  <br/>CARGANDO...</div>
+<md-sidenav class="ng-cloak" class="site-sidenav md-sidenav-left md-whiteframe-z2"
             md-component-id="left"
             ng-click="ul.toggleList()" aria-label="Show User List"
             md-is-locked-open="$mdMedia('gt-sm')">
@@ -58,7 +63,7 @@
 </md-sidenav>
 
 
-<div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
+<div class="ng-cloak" flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
 
   <md-toolbar layout="row" class="md-whiteframe-z1">
     <h3>Angular Material - Starter App</h3>
