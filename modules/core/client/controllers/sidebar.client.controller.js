@@ -15,16 +15,19 @@ angular.module('core').controller('SidebarController', [ '$scope', '$mdSidenav',
 
     $scope.links = [
       {
-        text: "Home", state: "home"
+        text: "Inicio", state: "home"
       },
       {
-        text: "About", state: "about"
+        text: "Entrar", state: "login"
       },
       {
-        text: "legal", state: "legal"
+        text: "Que es Commapp?", state: "about"
       },
       {
-        text: "Contact", state: "contact"
+        text: "Legales", state: "legal"
+      },
+      {
+        text: "Contactenos", state: "contact"
       }
     ];
 

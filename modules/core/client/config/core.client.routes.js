@@ -20,6 +20,13 @@ angular.module('core').config([ '$stateProvider', '$urlRouterProvider',
           ignoreState: true
         }
       })
+      .state('login', {
+        url: '/login',
+        templateUrl: 'modules/core/client/views/login.client.view.html',
+        data: {
+          ignoreState: true
+        }
+      })
       .state('legal', {
         url: '/legal',
         templateUrl: 'modules/core/client/views/legal.client.view.html',
