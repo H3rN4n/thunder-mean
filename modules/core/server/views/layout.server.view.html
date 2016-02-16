@@ -32,16 +32,19 @@
   <link href="{{favicon}}" rel="shortcut icon" type="image/x-icon">
 
   <!-- Application CSS Files -->
-  {% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">{% endfor %}
+  {% for cssFile in cssFiles %}
+  <link rel="stylesheet" href="{{cssFile}}">
+  {% endfor %}
 </head>
 
-<body layout="row demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header"  ng-controller="SidebarController">
+<body layout="row demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
 <div ng-hide="!ng-cloak" style="width: 100%;
     height: 500px;
     text-align: center;
     margin: 20% 0;">
   <img src="/modules/core/client/img/brand/logo.png" alt="Commapp"/>
-  <br/>CARGANDO...</div>
+  <br/>CARGANDO...
+</div>
 <md-sidenav class="ng-cloak" class="site-sidenav md-sidenav-left md-whiteframe-z2"
             md-component-id="left"
             ng-click="ul.toggleList()" aria-label="Show User List"
@@ -50,22 +53,14 @@
   <md-toolbar class="md-whiteframe-z1" style="text-align: center;">
     <img src="/modules/core/client/img/brand/logo.png" alt="Commapp" height="32" width="100" style="margin: 5% 20px;"/>
   </md-toolbar>
-
-  <md-list>
-    <md-list-item ng-repeat="it in [1,2,3,4,5,6]">
-      <md-button ng-class="">
-        Button
-      </md-button>
-    </md-list-item>
-  </md-list>
-
+  <sidebar></sidebar>
 </md-sidenav>
 
 
 <div class="ng-cloak" flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
 
   <md-toolbar layout="row" class="md-whiteframe-z1">
-    <h3> </h3>
+    <h3></h3>
   </md-toolbar>
 
   <md-content flex id="content">
@@ -74,21 +69,15 @@
 
 </div>
 
-  <!--Embedding The User Object-->
-  <script type="text/javascript">
-    var user = {{ user | json | safe }};
-  </script>
+<!--Application JavaScript Files-->
+{% for jsFile in jsFiles %}
+<script type="text/javascript" src="{{jsFile}}"></script>
+{% endfor %}
 
-  <!--Load The Socket.io File-->
-  <!--<script type="text/javascript" src="/socket.io/socket.io.js"></script>-->
-
-  <!--Application JavaScript Files-->
-  {% for jsFile in jsFiles %}<script type="text/javascript" src="{{jsFile}}"></script>{% endfor %}
-
-  {% if livereload %}
-  <!--Livereload script rendered -->
-  <script type="text/javascript" src="{{host}}:35729/livereload.js"></script>
-  {% endif %}
+{% if livereload %}
+<!--Livereload script rendered -->
+<script type="text/javascript" src="{{host}}:35729/livereload.js"></script>
+{% endif %}
 </body>
 
 </html>

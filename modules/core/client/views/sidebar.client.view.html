@@ -1,10 +1,8 @@
-<md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
-            md-component-id="left"
-            ng-click="ul.toggleList()" aria-label="Show User List"
-            md-is-locked-open="$mdMedia('gt-sm')">
+<div ng-controller="SidebarController">
+  <md-list>
 
-  <md-toolbar class="md-whiteframe-z1">
-    <h3>Menu</h3>
-  </md-toolbar>
-
-</md-sidenav>
+    <md-list-item ng-repeat="link in links" ui-sref="{{link.state}}">
+         - {{link.text}}
+    </md-list-item>
+  </md-list>
+</div>

@@ -9,10 +9,24 @@ angular.module('core').controller('SidebarController', [ '$scope', '$mdSidenav',
     /**
      * Hide or Show the 'left' sideNav area
      */
-    console.log('sidebar');
     function toggleUsersList() {
       $mdSidenav('left').toggle();
     }
+
+    $scope.links = [
+      {
+        text: "Home", state: "home"
+      },
+      {
+        text: "About", state: "about"
+      },
+      {
+        text: "legal", state: "legal"
+      },
+      {
+        text: "Contact", state: "contact"
+      }
+    ];
 
   }
 ]);
