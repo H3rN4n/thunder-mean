@@ -110,7 +110,7 @@ angular.element(document).ready(function () {
 
   //Then init the app
   setTimeout(function(){
-    angular.bootstrap(document, [ApplicationConfiguration.applicationModuleName])
+    angular.bootstrap(document, [ApplicationConfiguration.applicationModuleName]);
   }, 3000);
 
 });
